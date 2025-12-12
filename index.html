@@ -1,52 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amanda Rodrigues | Psicologia Clínica</title>
 
-    <!-- Tipografia como Interface Central -->
+    <!-- Fontes Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS para o Grid Sagrado -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Ícones -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* * PRINCÍPIO 4: PROFUNDIDADE E MATERIALIDADE 
-         * & PRINCÍPIO 1: DOMÍNIO DO MOVIMENTO FÍSICO
+        /* * AETHER ULTIMATE SYSTEM 
+         * Filosofia: Contraste Máximo & Visibilidade Absoluta
          */
 
         :root {
-            --bg-color: #FAFAF9;
-            /* Stone 50 - Calor sutil */
-            --text-primary: #1C1917;
-            /* Stone 900 */
-            --text-secondary: #57534E;
-            /* Stone 600 */
-            --accent: #D6D3D1;
-            /* Stone 300 */
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            /* Aumentei opacidade para mobile */
-            --glass-border: rgba(255, 255, 255, 0.6);
-            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-            /* Curva de física premium */
+            --bg-light: #F7F4F2;
+            /* Beige Porcelana */
+            --brand-primary: #7D2335;
+            /* Marsala Profundo */
+            --brand-secondary: #A67C6D;
+            /* Cobre */
+            --text-dark: #2A2A2A;
+            /* Quase Preto */
+            --text-light: #EFEBE9;
+            /* Off-white para texto sobre Marsala */
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
         }
 
         h1,
@@ -56,264 +52,255 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* O Poder Estratégico do Vazio (Container fluido mas contido) */
         .container-aether {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 40px;
         }
 
-        /* Glassmorphism Sutil */
-        .glass-panel {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            /* Blur aumentado para legibilidade */
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-            /* Sombra mais suave e difusa */
-        }
-
-        /* Coreografia de Scroll */
-        .reveal-text {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            transform: translateY(40px);
-            opacity: 0;
-            transition: all 1.2s var(--ease-out-expo);
-        }
-
-        .reveal-text.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .reveal-image-wrapper {
-            overflow: hidden;
+        /* HERO SECTION MATADORA */
+        .hero-section {
+            background-color: var(--brand-primary);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
             position: relative;
         }
 
-        .reveal-image {
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            font-weight: 500;
+            /* Mais peso */
+            letter-spacing: 0.05em;
+            line-height: 0.9;
+        }
+
+        /* Botão Hero - Alto Contraste */
+        .btn-gold {
+            background-color: var(--bg-light);
+            color: var(--brand-primary);
+            padding: 24px 48px;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background-color: #FFF;
+        }
+
+        /* WhatsApp Esquerda */
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            /* ESQUERDA ABSOLUTA */
+            z-index: 100;
+            width: 64px;
+            height: 64px;
+            background-color: #25D366;
+            /* Verde Oficial ou Marsala? Mantendo Marsala para Luxo */
+            background-color: var(--brand-primary);
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .fab-whatsapp:hover {
             transform: scale(1.1);
-            transition: transform 1.5s var(--ease-out-expo);
+            background-color: #631B2A;
         }
 
-        .reveal-image-wrapper.visible .reveal-image {
-            transform: scale(1);
+        /* Back to Top Direita */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 90;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
         }
 
-        /* Microinterações Táteis */
-        .btn-aether {
-            transition: all 0.4s var(--ease-out-expo);
-            position: relative;
-            overflow: hidden;
+        .back-to-top.active {
+            opacity: 1;
+            pointer-events: all;
         }
 
-        .btn-aether:active {
-            transform: scale(0.96);
-            /* Feedback de clique físico */
-        }
-
-        .btn-aether::after {
-            content: '';
+        /* Navbar Transparente sobre Fundo Escuro */
+        .nav-hero {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.03);
-            opacity: 0;
-            transition: opacity 0.3s;
+            z-index: 50;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .btn-aether:hover::after {
-            opacity: 1;
+        .nav-link-hero {
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            transition: color 0.3s;
         }
 
-        /* Scrollbar Premium */
-        ::-webkit-scrollbar {
-            width: 8px;
+        .nav-link-hero:hover {
+            color: #FFF;
         }
 
-        ::-webkit-scrollbar-track {
-            background: transparent;
+        /* Cards Serviços */
+        .card-service {
+            background: white;
+            border: 1px solid #E5E5E5;
+            transition: all 0.4s ease;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #D6D3D1;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #A8A29E;
-        }
-
-        /* Menu Navigation */
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--text-primary);
-            transition: width 0.4s var(--ease-out-expo);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Grid de Serviços */
-        .service-card {
-            transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+        .card-service:hover {
+            border-color: var(--brand-secondary);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(125, 35, 53, 0.08);
         }
     </style>
 </head>
 
-<body class="antialiased selection:bg-stone-200 selection:text-stone-900">
+<body class="antialiased">
 
-    <!-- Navbar Flutuante (Glassmorphism) -->
-    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-500" id="navbar">
-        <div class="glass-panel border-b border-white/20">
-            <div class="container-aether h-20 flex items-center justify-between">
-                <a href="#" class="text-2xl font-serif tracking-tight font-medium hover:opacity-70 transition-opacity">
-                    A.R.
-                </a>
+    <!-- Navbar Integrada ao Hero -->
+    <nav class="nav-hero">
+        <div class="container-aether h-24 flex items-center justify-between">
+            <a href="#" class="text-3xl font-serif text-white tracking-widest">A.R.</a>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-12 text-sm font-medium tracking-wide text-stone-600">
-                    <a href="#sobre" class="nav-link hover:text-stone-900 transition-colors">Sobre</a>
-                    <a href="#metodologia" class="nav-link hover:text-stone-900 transition-colors">Abordagem</a>
-                    <a href="#servicos" class="nav-link hover:text-stone-900 transition-colors">Serviços</a>
-                    <a href="#contato" class="nav-link hover:text-stone-900 transition-colors">Contato</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2 text-stone-600 btn-aether" onclick="toggleMobileMenu()">
-                    <i data-lucide="menu"></i>
-                </button>
+            <div class="hidden md:flex space-x-12">
+                <a href="#sobre" class="nav-link-hero">Sobre</a>
+                <a href="#servicos" class="nav-link-hero">Serviços</a>
+                <a href="#contato" class="nav-link-hero">Contato</a>
             </div>
-        </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="fixed inset-0 bg-[#FAFAF9] z-40 transform translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] flex flex-col justify-center items-center space-y-8 opacity-0">
-            <button class="absolute top-6 right-6 p-4" onclick="toggleMobileMenu()">
-                <i data-lucide="x" class="w-8 h-8"></i>
+            <!-- Mobile Toggle -->
+            <button class="md:hidden text-white" onclick="toggleMenu()">
+                <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
-            <a href="#sobre" class="text-3xl font-serif" onclick="toggleMobileMenu()">Sobre</a>
-            <a href="#metodologia" class="text-3xl font-serif" onclick="toggleMobileMenu()">Abordagem</a>
-            <a href="#servicos" class="text-3xl font-serif" onclick="toggleMobileMenu()">Serviços</a>
-            <a href="#contato" class="text-3xl font-serif" onclick="toggleMobileMenu()">Contato</a>
         </div>
     </nav>
 
-    <!-- Hero Section: O Vazio Estratégico -->
-    <section class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-        <!-- Elemento de fundo abstrato (Profundidade) -->
-        <div
-            class="absolute top-20 right-[-10%] w-[50vw] h-[50vw] bg-stone-100 rounded-full blur-[100px] opacity-60 -z-10 animate-pulse-slow">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-[#7D2335] z-[60] transform translate-y-full transition-transform duration-500 flex flex-col justify-center items-center gap-8 text-white">
+        <button onclick="toggleMenu()" class="absolute top-8 right-8">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <a href="#sobre" onclick="toggleMenu()" class="text-4xl font-serif">Sobre</a>
+        <a href="#servicos" onclick="toggleMenu()" class="text-4xl font-serif">Serviços</a>
+        <a href="#contato" onclick="toggleMenu()" class="text-4xl font-serif">Contato</a>
+    </div>
+
+    <!-- HERO SECTION: IMPACTO VISUAL -->
+    <section class="hero-section">
+        <!-- Textura de fundo sutil -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
         </div>
 
-        <div class="container-aether grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-7 space-y-8 z-10">
-                <div class="reveal-text">
-                    <span class="text-xs font-semibold tracking-[0.2em] uppercase text-stone-500">Psicologia
-                        Clínica</span>
+        <div class="container-aether grid grid-cols-1 lg:grid-cols-2 gap-16 items-center pt-20">
+
+            <!-- Texto: Claro sobre Escuro (Garantia de Leitura) -->
+            <div class="z-10 order-2 lg:order-1 space-y-12">
+                <div class="border-l-2 border-[#A67C6D] pl-6">
+                    <span class="text-sm uppercase tracking-[0.4em] text-[#A67C6D]">Psicologia Clínica</span>
                 </div>
-                <!-- 
-                  ALTERAÇÃO AETHER:
-                  Removida a frase "O silêncio fala. Nós ouvimos."
-                  Substituído apenas pelo nome "Amanda Rodrigues" como solicitado.
-                  A tipografia carrega o peso do design agora.
-                -->
-                <div class="reveal-text" style="transition-delay: 100ms;">
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-stone-900">
-                        Amanda<br>
-                        Rodrigues
-                    </h1>
-                </div>
-                <div class="reveal-text max-w-md" style="transition-delay: 200ms;">
-                    <p class="text-lg text-stone-600 leading-relaxed font-light">
-                        Um espaço seguro para reconectar sua essência, compreender suas narrativas e construir novos
-                        caminhos de serenidade.
-                    </p>
-                </div>
-                <div class="reveal-text pt-4" style="transition-delay: 300ms;">
-                    <a href="#contato"
-                        class="btn-aether inline-flex items-center px-8 py-4 bg-stone-900 text-white text-sm tracking-widest uppercase hover:bg-stone-800 rounded-sm">
+
+                <h1 class="hero-title text-6xl md:text-8xl lg:text-[7rem] text-white">
+                    Amanda<br>
+                    <span class="text-[#E0C0B0] italic">Rodrigues</span>
+                </h1>
+
+                <p class="text-xl text-gray-300 font-light leading-relaxed max-w-lg">
+                    Um espaço seguro para reconectar sua essência. Atendimento ético, profundo e transformador.
+                </p>
+
+                <div class="pt-4">
+                    <a href="#contato" class="btn-gold">
                         Agendar Sessão
-                        <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="md:col-span-5 relative h-[60vh] md:h-[80vh] w-full reveal-image-wrapper mt-10 md:mt-0">
-                <!-- Imagem com Aspect Ratio calculado e animação de revelação -->
-                <div class="absolute inset-0 bg-stone-200 overflow-hidden rounded-sm reveal-image h-full w-full">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
-                        alt="Amanda Rodrigues"
-                        class="w-full h-full object-cover object-top opacity-90 hover:scale-105 transition-transform duration-[2s]">
+            <!-- Imagem: Recorte Elegante -->
+            <div class="order-1 lg:order-2 relative h-[50vh] lg:h-[80vh] w-full">
+                <!-- Moldura Dourada -->
+                <div class="absolute top-4 right-4 w-full h-full border border-[#A67C6D] rounded-t-full opacity-50">
                 </div>
 
-                <!-- 
-                  ALTERAÇÃO AETHER:
-                  Removido o card flutuante com a citação "A cura começa...".
-                  Agora a imagem respira sozinha, limpa e impactante.
-                -->
+                <!-- Máscara de Imagem -->
+                <div class="w-full h-full rounded-t-full overflow-hidden relative bg-black/20">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
+                        alt="Dra. Amanda Rodrigues"
+                        class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-[2s]">
+
+                    <!-- Gradiente inferior para integrar com o fundo se necessário -->
+                    <div
+                        class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#7D2335] to-transparent opacity-80">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sobre: Tipografia e Layout Editorial -->
-    <section id="sobre" class="py-32 relative">
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-32 bg-[#F7F4F2]">
         <div class="container-aether">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                <div class="reveal-image-wrapper order-2 md:order-1 relative">
-                    <!-- Elemento decorativo -->
-                    <div class="absolute -top-10 -left-10 w-full h-full border border-stone-300 -z-10 rounded-sm"></div>
+                <div class="relative">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-[#7D2335]"></div>
                     <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070&auto=format&fit=crop"
-                        alt="Consultório Minimalista"
-                        class="w-full h-[600px] object-cover grayscale-[20%] rounded-sm reveal-image">
+                        class="w-full h-[600px] object-cover grayscale-[10%]" alt="Consultório">
                 </div>
-                <div class="order-1 md:order-2 space-y-8">
-                    <div class="reveal-text">
-                        <h2 class="text-4xl md:text-5xl text-stone-900 mb-6">Sobre Mim</h2>
-                        <div class="h-px w-20 bg-stone-400 mb-8"></div>
-                    </div>
 
-                    <div class="space-y-6 text-stone-600 leading-loose text-lg font-light reveal-text"
-                        style="transition-delay: 100ms;">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                        <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
-                        </p>
-                    </div>
+                <div class="space-y-10">
+                    <span class="text-xs font-bold tracking-[0.3em] text-[#A67C6D] uppercase">Sobre Mim</span>
+                    <h2 class="text-5xl md:text-6xl text-[#7D2335] leading-tight">
+                        Escuta que <br><span class="italic font-light">transforma</span>.
+                    </h2>
+                    <p class="text-[#4A3B3B] text-lg leading-loose font-light">
+                        Minha trajetória na psicologia é marcada pelo compromisso ético e pela crença na capacidade
+                        humana de ressignificação. Ofereço um ambiente livre de julgamentos, onde sua história é
+                        validada e compreendida.
+                    </p>
 
-                    <div class="grid grid-cols-2 gap-8 pt-8 reveal-text" style="transition-delay: 200ms;">
+                    <div class="grid grid-cols-2 gap-12 pt-8 border-t border-gray-300">
                         <div>
-                            <span class="block text-4xl font-serif text-stone-900 mb-2">08+</span>
-                            <span class="text-sm text-stone-500 uppercase tracking-widest">Anos de Experiência</span>
+                            <span class="block text-4xl font-serif text-[#7D2335]">08+</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Anos de Experiência</span>
                         </div>
                         <div>
-                            <span class="block text-4xl font-serif text-stone-900 mb-2">CRP</span>
-                            <span class="text-sm text-stone-500 uppercase tracking-widest">06/123456</span>
+                            <span class="block text-4xl font-serif text-[#7D2335]">CRP</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">06/12345</span>
                         </div>
                     </div>
                 </div>
@@ -321,245 +308,117 @@
         </div>
     </section>
 
-    <!-- Serviços: Grid e Cards Táteis -->
-    <section id="servicos" class="py-32 bg-stone-100/50">
+    <!-- Serviços -->
+    <section id="servicos" class="py-32 bg-white">
         <div class="container-aether">
-            <div class="text-center max-w-2xl mx-auto mb-20 reveal-text">
-                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-stone-500 mb-4 block">Áreas de
-                    Atuação</span>
-                <h2 class="text-4xl md:text-5xl text-stone-900">Caminhos para o Equilíbrio</h2>
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-5xl text-[#7D2335] mb-6">Especialidades</h2>
+                <div class="w-20 h-1 bg-[#A67C6D] mx-auto"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="service-card glass-panel p-10 rounded-sm reveal-text" style="transition-delay: 0ms;">
-                    <i data-lucide="brain-circuit" class="w-10 h-10 text-stone-700 mb-6 stroke-1"></i>
-                    <h3 class="text-2xl mb-4 text-stone-900">Psicoterapia Individual</h3>
-                    <p class="text-stone-600 leading-relaxed font-light mb-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud
-                        exercitation.
-                    </p>
-                    <a href="#"
-                        class="inline-block text-sm uppercase tracking-widest text-stone-900 border-b border-stone-300 pb-1 hover:border-stone-900 transition-colors">Saiba
-                        mais</a>
+                <div class="card-service p-12 text-center group cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-[#F7F4F2] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#7D2335] transition-colors">
+                        <i data-lucide="brain-circuit"
+                            class="w-8 h-8 text-[#7D2335] group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-[#2A2A2A] mb-4">Psicoterapia</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">Tratamento de ansiedade, depressão e conflitos
+                        internos com abordagem acolhedora.</p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="service-card glass-panel p-10 rounded-sm reveal-text" style="transition-delay: 150ms;">
-                    <i data-lucide="users" class="w-10 h-10 text-stone-700 mb-6 stroke-1"></i>
-                    <h3 class="text-2xl mb-4 text-stone-900">Terapia de Casal</h3>
-                    <p class="text-stone-600 leading-relaxed font-light mb-6">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur.
-                    </p>
-                    <a href="#"
-                        class="inline-block text-sm uppercase tracking-widest text-stone-900 border-b border-stone-300 pb-1 hover:border-stone-900 transition-colors">Saiba
-                        mais</a>
+                <div class="card-service p-12 text-center group cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-[#F7F4F2] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#7D2335] transition-colors">
+                        <i data-lucide="heart-handshake"
+                            class="w-8 h-8 text-[#7D2335] group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-[#2A2A2A] mb-4">Relacionamentos</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">Espaço de mediação para casais, focado na
+                        comunicação e reconexão.</p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="service-card glass-panel p-10 rounded-sm reveal-text" style="transition-delay: 300ms;">
-                    <i data-lucide="sun" class="w-10 h-10 text-stone-700 mb-6 stroke-1"></i>
-                    <h3 class="text-2xl mb-4 text-stone-900">Ansiedade e Depressão</h3>
-                    <p class="text-stone-600 leading-relaxed font-light mb-6">
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                        id est.
-                    </p>
-                    <a href="#"
-                        class="inline-block text-sm uppercase tracking-widest text-stone-900 border-b border-stone-300 pb-1 hover:border-stone-900 transition-colors">Saiba
-                        mais</a>
+                <div class="card-service p-12 text-center group cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-[#F7F4F2] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#7D2335] transition-colors">
+                        <i data-lucide="sun"
+                            class="w-8 h-8 text-[#7D2335] group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-[#2A2A2A] mb-4">Bem-estar</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">Desenvolvimento pessoal e inteligência emocional
+                        para uma vida plena.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Metodologia: O Espaço Negativo -->
-    <section id="metodologia" class="py-32 relative overflow-hidden">
-        <div class="container-aether relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-                <div class="md:col-span-8 md:col-start-3 text-center space-y-12">
-                    <div class="reveal-text">
-                        <h2 class="text-4xl md:text-6xl text-stone-900 leading-tight">
-                            "Não somos apenas o que sofremos, mas o que escolhemos nos tornar."
-                        </h2>
-                    </div>
-                    <div class="reveal-text" style="transition-delay: 100ms;">
-                        <p class="text-stone-500 font-light text-lg">
-                            — Carl Jung (Adaptado)
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <!-- CTA Final -->
+    <section id="contato" class="py-32 bg-[#2A2A2A] text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
         </div>
-    </section>
 
-    <!-- Contato: Minimalismo Funcional -->
-    <section id="contato" class="py-32 bg-stone-900 text-stone-100 relative">
-        <div class="container-aether">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
-                <div class="space-y-10 reveal-text">
-                    <div>
-                        <span
-                            class="text-xs font-semibold tracking-[0.2em] uppercase text-stone-400 mb-4 block">Contato</span>
-                        <h2 class="text-4xl md:text-5xl text-white mb-6">Vamos conversar?</h2>
-                        <p class="text-stone-400 font-light text-lg max-w-md">
-                            Dê o primeiro passo em direção ao seu bem-estar. Preencha o formulário ou entre em contato
-                            direto.
-                        </p>
-                    </div>
+        <div class="container-aether relative z-10 text-center">
+            <span class="text-xs uppercase tracking-[0.4em] text-[#A67C6D] mb-4 block">Contato</span>
+            <h2 class="text-5xl md:text-7xl font-serif mb-10 leading-tight">
+                Comece sua jornada<br>hoje mesmo.
+            </h2>
 
-                    <div class="space-y-6">
-                        <div class="flex items-center space-x-4 group cursor-pointer">
-                            <div
-                                class="w-12 h-12 rounded-full border border-stone-700 flex items-center justify-center group-hover:bg-stone-800 transition-colors">
-                                <i data-lucide="phone" class="w-5 h-5 text-stone-300"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs uppercase tracking-widest text-stone-500">Telefone</p>
-                                <p class="text-lg font-serif text-stone-200">+55 (11) 99999-9999</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center space-x-4 group cursor-pointer">
-                            <div
-                                class="w-12 h-12 rounded-full border border-stone-700 flex items-center justify-center group-hover:bg-stone-800 transition-colors">
-                                <i data-lucide="map-pin" class="w-5 h-5 text-stone-300"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs uppercase tracking-widest text-stone-500">Localização</p>
-                                <p class="text-lg font-serif text-stone-200">Av. Paulista, 1000 - São Paulo</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center space-x-4 group cursor-pointer">
-                            <div
-                                class="w-12 h-12 rounded-full border border-stone-700 flex items-center justify-center group-hover:bg-stone-800 transition-colors">
-                                <i data-lucide="instagram" class="w-5 h-5 text-stone-300"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs uppercase tracking-widest text-stone-500">Social</p>
-                                <p class="text-lg font-serif text-stone-200">@amandarodrigues_psi</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-stone-800/50 backdrop-blur-sm p-10 rounded-sm border border-stone-700 reveal-text"
-                    style="transition-delay: 200ms;">
-                    <form class="space-y-6">
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Nome
-                                Completo</label>
-                            <input type="text"
-                                class="w-full bg-stone-900/50 border border-stone-600 text-stone-100 px-4 py-3 focus:outline-none focus:border-stone-300 transition-colors rounded-sm"
-                                placeholder="Seu nome">
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Email</label>
-                            <input type="email"
-                                class="w-full bg-stone-900/50 border border-stone-600 text-stone-100 px-4 py-3 focus:outline-none focus:border-stone-300 transition-colors rounded-sm"
-                                placeholder="seu@email.com">
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Mensagem</label>
-                            <textarea rows="4"
-                                class="w-full bg-stone-900/50 border border-stone-600 text-stone-100 px-4 py-3 focus:outline-none focus:border-stone-300 transition-colors rounded-sm"
-                                placeholder="Como posso ajudar?"></textarea>
-                        </div>
-                        <button type="button"
-                            class="btn-aether w-full bg-stone-200 text-stone-900 py-4 uppercase tracking-widest text-xs font-bold hover:bg-white transition-colors rounded-sm">
-                            Enviar Mensagem
-                        </button>
-                    </form>
-                </div>
-            </div>
+            <a href="https://wa.me/5511999999999" class="btn-gold border-none hover:bg-gray-200">
+                Iniciar Conversa
+            </a>
 
             <div
-                class="mt-20 pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center text-stone-500 text-sm">
-                <p>&copy; 2024 Amanda Rodrigues. Todos os direitos reservados.</p>
-                <p class="mt-2 md:mt-0 font-serif italic">Design by Aether</p>
+                class="mt-20 flex flex-col md:flex-row justify-center gap-12 text-sm uppercase tracking-widest text-gray-500">
+                <span>Av. Paulista, 1000 - SP</span>
+                <span>(11) 99999-9999</span>
+                <span>@amandarodrigues_psi</span>
             </div>
         </div>
     </section>
 
+    <footer class="bg-[#222] py-8 border-t border-gray-800 text-center text-gray-600 text-xs uppercase tracking-widest">
+        &copy; 2024 Amanda Rodrigues. Todos os direitos reservados.
+    </footer>
+
+    <!-- FLOATERS -->
+
+    <!-- WhatsApp (Esquerda) -->
+    <a href="https://wa.me/5511999999999" target="_blank" class="fab-whatsapp group">
+        <i data-lucide="message-circle" class="w-8 h-8 stroke-[1.5px]"></i>
+    </a>
+
+    <!-- Back to Top (Direita) -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="back-to-top" id="backToTop">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
     <script>
-        // Inicializar ícones
         lucide.createIcons();
 
-        // PRINCÍPIO 1 & 5: Coreografia e Movimento Físico
-        // Intersection Observer para revelar elementos com elegância
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Revelar apenas uma vez
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-text, .reveal-image-wrapper, .service-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Mobile Menu Logic
-        function toggleMobileMenu() {
+        // Menu Mobile
+        function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             const isOpen = !menu.classList.contains('translate-y-full');
-
             if (isOpen) {
                 menu.classList.add('translate-y-full');
-                menu.classList.remove('opacity-100');
-                menu.classList.add('opacity-0');
             } else {
                 menu.classList.remove('translate-y-full');
-                menu.classList.remove('opacity-0');
-                menu.classList.add('opacity-100');
             }
         }
 
-        // Smooth Scroll para Links Internos (Física)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Navbar behavior on scroll
-        let lastScroll = 0;
-        const navbar = document.getElementById('navbar');
-
+        // Back to Top
+        const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll <= 0) {
-                navbar.classList.remove('py-2');
-                return;
-            }
-
-            if (currentScroll > lastScroll && currentScroll > 80) {
-                // Scroll Down
-                navbar.style.transform = 'translateY(-100%)';
+            if (window.scrollY > 600) {
+                backToTopBtn.classList.add('active');
             } else {
-                // Scroll Up
-                navbar.style.transform = 'translateY(0)';
-                navbar.classList.add('py-2');
+                backToTopBtn.classList.remove('active');
             }
-            lastScroll = currentScroll;
         });
-
     </script>
 </body>
 
