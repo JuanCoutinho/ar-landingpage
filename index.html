@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -38,6 +38,8 @@
             /* Quase Preto */
             --text-light: #EFEBE9;
             /* Off-white para texto sobre Marsala */
+            --text-body: #594A47;
+            /* Marrom acinzentado para leitura */
         }
 
         html.lenis,
@@ -89,6 +91,19 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Efeito de Ruído Sutil */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
         h1,
         h2,
         h3,
@@ -117,7 +132,6 @@
             font-family: 'Playfair Display', serif;
             text-transform: uppercase;
             font-weight: 500;
-            /* Mais peso */
             letter-spacing: 0.05em;
             line-height: 0.9;
         }
@@ -217,22 +231,40 @@
             color: #FFF;
         }
 
-        /* Cards Serviços */
+        /* Cards Serviços (Expandidos para conteúdo) */
         .card-service {
             background: white;
             border: 1px solid #E5E5E5;
             transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .card-service:hover {
             border-color: var(--brand-secondary);
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 25px 50px rgba(125, 35, 53, 0.08);
+        }
+
+        /* Texto de Corpo Rico */
+        .rich-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-body);
+        }
+
+        .rich-text strong {
+            color: var(--brand-primary);
+            font-weight: 600;
         }
     </style>
 </head>
 
 <body class="antialiased">
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
 
     <!-- Navbar Integrada ao Hero -->
     <nav class="nav-hero">
@@ -263,16 +295,11 @@
         <a onclick="toggleMenu(); lenis.scrollTo('#contato')" class="text-4xl font-serif cursor-pointer">Contato</a>
     </div>
 
-    <!-- HERO SECTION: IMPACTO VISUAL -->
+    <!-- HERO SECTION -->
     <section class="hero-section">
-        <!-- Textura de fundo sutil -->
-        <div class="absolute inset-0 opacity-10 pointer-events-none"
-            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
-        </div>
-
         <div class="container-aether grid grid-cols-1 lg:grid-cols-2 gap-16 items-center pt-20">
 
-            <!-- Texto: Claro sobre Escuro (Garantia de Leitura) -->
+            <!-- Texto Hero -->
             <div class="z-10 order-2 lg:order-1 space-y-12">
                 <div class="border-l-2 border-[#A67C6D] pl-6">
                     <span class="text-sm uppercase tracking-[0.4em] text-[#A67C6D]">Psicologia Clínica</span>
@@ -285,32 +312,28 @@
 
                 <!-- Frase Poética em Cascata -->
                 <div
-                    class="text-xl md:text-2xl text-gray-200 font-serif italic leading-relaxed max-w-lg mt-8 space-y-2 opacity-90">
+                    class="text-xl md:text-2xl text-gray-200 font-serif italic leading-relaxed max-w-lg mt-8 space-y-3 opacity-90">
                     <p class="block">Instante de ver</p>
                     <p class="block pl-12 md:pl-16">Momento de entender</p>
                     <p class="block pl-24 md:pl-32">Tempo de concluir.</p>
                 </div>
 
                 <div class="pt-8">
-                    <a href="https://wa.me/5533999828549" class="btn-gold cursor-pointer">
+                    <a onclick="lenis.scrollTo('#contato')" class="btn-gold cursor-pointer">
                         Agendar Sessão
                     </a>
                 </div>
             </div>
 
-            <!-- Imagem: Recorte Elegante -->
+            <!-- Imagem Hero -->
             <div class="order-1 lg:order-2 relative h-[50vh] lg:h-[80vh] w-full">
-                <!-- Moldura Dourada -->
                 <div class="absolute top-4 right-4 w-full h-full border border-[#A67C6D] rounded-t-full opacity-50">
                 </div>
 
-                <!-- Máscara de Imagem -->
                 <div class="w-full h-full rounded-t-full overflow-hidden relative bg-black/20">
                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
                         alt="Dra. Amanda Rodrigues"
                         class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-[2s]">
-
-                    <!-- Gradiente inferior para integrar com o fundo se necessário -->
                     <div
                         class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#7D2335] to-transparent opacity-80">
                     </div>
@@ -319,11 +342,11 @@
         </div>
     </section>
 
-    <!-- Sobre Section -->
+    <!-- Sobre Section (Conteúdo Real Integrado) -->
     <section id="sobre" class="py-32 bg-[#F7F4F2]">
         <div class="container-aether">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                <div class="relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+                <div class="relative sticky top-32">
                     <div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-[#7D2335]"></div>
                     <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070&auto=format&fit=crop"
                         class="w-full h-[600px] object-cover grayscale-[10%]" alt="Consultório">
@@ -331,87 +354,130 @@
 
                 <div class="space-y-10">
                     <span class="text-xs font-bold tracking-[0.3em] text-[#A67C6D] uppercase">Sobre Mim</span>
-                    <h2 class="text-5xl md:text-6xl text-[#7D2335] leading-tight">
-                        Escuta que <br><span class="italic font-light">transforma</span>.
-                    </h2>
-                    <p class="text-[#4A3B3B] text-lg leading-loose font-light">
-                        Minha trajetória na psicologia é marcada pelo compromisso ético e pela crença na capacidade
-                        humana de ressignificação. Ofereço um ambiente livre de julgamentos, onde sua história é
-                        validada e compreendida.
-                    </p>
 
-                    <div class="grid grid-cols-2 gap-12 pt-8 border-t border-gray-300">
-                        <div>
-                            <span class="block text-4xl font-serif text-[#7D2335]">08+</span>
-                            <span class="text-xs uppercase tracking-widest text-gray-500">Anos de Experiência</span>
+                    <h2 class="text-4xl md:text-5xl text-[#7D2335] leading-tight font-serif">
+                        Psicóloga Clínica e Psicanalista de orientação Lacaniana.
+                    </h2>
+
+                    <div class="rich-text text-lg font-light leading-loose text-justify text-[#594A47]">
+                        <p>
+                            Olá, sou psicóloga formada pela Universidade Federal de São João Del-Rei (UFSJ), com
+                            pós-graduação em clínica com pessoas autistas e formação em psicanálise pelo Instituto
+                            Bergasse (IB). Para além da minha formação acadêmica, meu percurso clínico se desenvolveu a
+                            partir da <strong>teoria psicanalítica</strong>. Sendo assim, minha escuta e todo o processo
+                            são fundamentados na psicanálise de orientação Lacaniana.
+                        </p>
+
+                        <div class="pl-6 border-l-2 border-[#A67C6D] my-8 py-2 italic text-[#7D2335]">
+                            "Acredito que a formação de todo analista é constante e se faz sustentando o tripé
+                            psicanalítico colocado desde Sigmund Freud: supervisão, análise pessoal e estudo constante
+                            da teoria."
                         </div>
-                        <div>
-                            <span class="block text-4xl font-serif text-[#7D2335]">CRP</span>
-                            <span class="text-xs uppercase tracking-widest text-gray-500">06/12345</span>
-                        </div>
+
+                        <p>
+                            Comecei minha atuação na psicanálise desde a universidade, atendendo crianças, jovens e
+                            adultos em estágios supervisionados, ONGs e outras instituições. Hoje, sigo construindo
+                            minha clínica particular, sempre tendo em vista a ética que transpassa tanto minha formação
+                            como psicóloga quanto meu fazer como analista.
+                        </p>
+
+                        <h3 class="text-2xl font-serif text-[#7D2335] mt-12 mb-6">A Abordagem Analítica</h3>
+                        <p>
+                            A psicanálise entende que existe algo em nós, chamado <strong>inconsciente</strong>, que nos
+                            constitui e do qual não temos acesso automático. Ele está na "ponta da língua" e em tudo que
+                            constrói nossa subjetividade, principalmente nas repetições que, às vezes, mesmo danosas,
+                            não conseguimos mudar.
+                        </p>
+                        <p>
+                            Entendo a análise não como uma solução mágica para todo sofrimento, mas como um modo de
+                            estar mais avisado do nosso inconsciente. A partir disso, conseguimos fazer arranjos mais
+                            interessantes e prazerosos com a vida. Como dizia Freud, a análise busca transformar a
+                            miséria neurótica em sofrimento comum — pois do sofrimento nenhum ser humano é isento, mas
+                            ele não precisa ser adoecedor e paralisante.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços -->
+    <!-- Sobre o Serviço (Antigo Especialidades) -->
     <section id="servicos" class="py-32 bg-white">
         <div class="container-aether">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-5xl text-[#7D2335] mb-6">Especialidades</h2>
+                <h2 class="text-5xl text-[#7D2335] mb-6 font-serif">Sobre o serviço</h2>
                 <div class="w-20 h-1 bg-[#A67C6D] mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="card-service p-12 text-center group cursor-pointer">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
+                <!-- Card 1: Tratamento -->
+                <div class="card-service p-10 text-center group cursor-default">
                     <div
                         class="w-16 h-16 bg-[#F7F4F2] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#7D2335] transition-colors">
                         <i data-lucide="brain-circuit"
                             class="w-8 h-8 text-[#7D2335] group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-2xl font-serif text-[#2A2A2A] mb-4">Psicoterapia</h3>
-                    <p class="text-gray-500 font-light leading-relaxed">Tratamento de ansiedade, depressão e conflitos
-                        internos com abordagem acolhedora.</p>
+                    <h3 class="text-2xl font-serif text-[#2A2A2A] mb-4">Tratamento</h3>
+                    <div class="text-[#594A47] font-light leading-relaxed text-sm text-justify">
+                        <p>O tratamento pela perspectiva lacaniana depende do desejo e do tempo lógico de cada paciente.
+                            É você quem decide até onde quer aprender sobre si mesmo.</p>
+                        <p>As intervenções guiam o processo, mas o tempo de elaboração é singular. Não há como
+                            pré-determinar a duração, mas garanto uma escuta atenta e ética.</p>
+                        <p class="text-xs mt-4 pt-4 border-t border-gray-100">
+                            *O tratamento não é medicamentoso. Caso necessário, haverá encaminhamento para psiquiatra de
+                            confiança.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="card-service p-12 text-center group cursor-pointer">
+                <!-- Card 2: Ética e Sigilo -->
+                <div class="card-service p-10 text-center group cursor-default">
                     <div
                         class="w-16 h-16 bg-[#F7F4F2] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#7D2335] transition-colors">
-                        <i data-lucide="heart-handshake"
+                        <i data-lucide="shield-check"
                             class="w-8 h-8 text-[#7D2335] group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-2xl font-serif text-[#2A2A2A] mb-4">Relacionamentos</h3>
-                    <p class="text-gray-500 font-light leading-relaxed">Espaço de mediação para casais, focado na
-                        comunicação e reconexão.</p>
+                    <h3 class="text-2xl font-serif text-[#2A2A2A] mb-4">Ética e Sigilo</h3>
+                    <div class="text-[#594A47] font-light leading-relaxed text-sm text-justify">
+                        <p>Atendimentos respaldados pelo código de ética do Psicólogo, baseados no respeito, liberdade e
+                            integridade. Pautados na responsabilidade social e na singularidade de cada história.</p>
+                        <p class="mt-4 font-medium text-[#7D2335]">Confidencialidade Absoluta</p>
+                        <p>Conforme o Art. 9º, o sigilo é garantido para proteger a intimidade e a liberdade de
+                            expressão do paciente.</p>
+                    </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="card-service p-12 text-center group cursor-pointer">
+                <!-- Card 3: Preço -->
+                <div class="card-service p-10 text-center group cursor-default">
                     <div
                         class="w-16 h-16 bg-[#F7F4F2] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#7D2335] transition-colors">
-                        <i data-lucide="sun"
+                        <i data-lucide="coins"
                             class="w-8 h-8 text-[#7D2335] group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-2xl font-serif text-[#2A2A2A] mb-4">Bem-estar</h3>
-                    <p class="text-gray-500 font-light leading-relaxed">Desenvolvimento pessoal e inteligência emocional
-                        para uma vida plena.</p>
+                    <h3 class="text-2xl font-serif text-[#2A2A2A] mb-4">Investimento</h3>
+                    <div class="text-[#594A47] font-light leading-relaxed text-sm text-justify">
+                        <p>O valor é informado diretamente via contato (Art. 20 do Código de Ética proíbe preço como
+                            propaganda).</p>
+                        <p class="mt-2">Não trabalho com pacotes; os valores são fixos independente do tempo de
+                            tratamento.</p>
+                        <ul class="mt-4 text-left list-disc list-inside space-y-1 text-xs">
+                            <li>Nota fiscal para reembolso (convênio)</li>
+                            <li>Pagamento via PIX, dinheiro ou transferência</li>
+                            <li>Opção de pagamento por sessão ou mensal</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Final -->
+    <!-- CTA Final (CHAPADO, SEM TEXTURA) -->
     <section id="contato" class="py-32 bg-[#2A2A2A] text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-        </div>
-
         <div class="container-aether relative z-10 text-center">
             <span class="text-xs uppercase tracking-[0.4em] text-[#A67C6D] mb-4 block">Contato</span>
             <h2 class="text-5xl md:text-7xl font-serif mb-10 leading-tight">
-                Comece sua jornada<br>hoje mesmo.
+                Se você deseja iniciar essa jornada,<br>entre em contato comigo.
             </h2>
 
             <a href="https://wa.me/5533999828549" class="btn-gold border-none hover:bg-gray-200 cursor-pointer">
@@ -451,7 +517,7 @@
         // 1. INICIALIZAÇÃO LENIS (SMOOTH SCROLL)
         const lenis = new Lenis({
             duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Curva exponencial suave
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             direction: 'vertical',
             gestureDirection: 'vertical',
             smooth: true,
