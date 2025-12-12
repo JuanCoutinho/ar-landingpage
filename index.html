@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -63,7 +63,7 @@
             pointer-events: none;
         }
 
-        /* SCROLLBAR PREMIUM (Adeus barra feia) */
+        /* SCROLLBAR PREMIUM */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -76,7 +76,6 @@
             background-color: var(--brand-secondary);
             border-radius: 4px;
             border: 2px solid var(--bg-light);
-            /* Cria um respiro ao redor */
         }
 
         ::-webkit-scrollbar-thumb:hover {
@@ -118,7 +117,7 @@
             padding: 0 40px;
         }
 
-        /* HERO SECTION MATADORA */
+        /* HERO SECTION */
         .hero-section {
             background-color: var(--brand-primary);
             color: var(--text-light);
@@ -136,7 +135,7 @@
             line-height: 0.9;
         }
 
-        /* Botão Hero - Alto Contraste */
+        /* Botão Hero */
         .btn-gold {
             background-color: var(--bg-light);
             color: var(--brand-primary);
@@ -163,7 +162,6 @@
             position: fixed;
             bottom: 40px;
             left: 40px;
-            /* ESQUERDA ABSOLUTA */
             z-index: 100;
             width: 64px;
             height: 64px;
@@ -208,7 +206,7 @@
             pointer-events: all;
         }
 
-        /* Navbar Transparente sobre Fundo Escuro */
+        /* Navbar Transparente */
         .nav-hero {
             position: absolute;
             top: 0;
@@ -231,7 +229,7 @@
             color: #FFF;
         }
 
-        /* Cards Serviços (Expandidos para conteúdo) */
+        /* Cards Serviços */
         .card-service {
             background: white;
             border: 1px solid #E5E5E5;
@@ -239,6 +237,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .card-service:hover {
@@ -247,7 +246,7 @@
             box-shadow: 0 25px 50px rgba(125, 35, 53, 0.08);
         }
 
-        /* Texto de Corpo Rico */
+        /* Tipografia de Corpo */
         .rich-text p {
             margin-bottom: 1.5rem;
             line-height: 1.8;
@@ -257,6 +256,25 @@
         .rich-text strong {
             color: var(--brand-primary);
             font-weight: 600;
+        }
+
+        .pull-quote {
+            border-left: 3px solid var(--brand-secondary);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--brand-primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        /* Ajuste de Imagens (Limpeza Visual) */
+        .img-clean {
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -297,7 +315,7 @@
 
     <!-- HERO SECTION -->
     <section class="hero-section">
-        <div class="container-aether grid grid-cols-1 lg:grid-cols-2 gap-16 items-center pt-20">
+        <div class="container-aether grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-40 items-center pt-20">
 
             <!-- Texto Hero -->
             <div class="z-10 order-2 lg:order-1 space-y-12">
@@ -325,14 +343,13 @@
                 </div>
             </div>
 
-            <!-- Imagem Hero -->
+            <!-- Imagem Hero (Limpíssima) -->
             <div class="order-1 lg:order-2 relative h-[50vh] lg:h-[80vh] w-full">
-                <div class="absolute top-4 right-4 w-full h-full border border-[#A67C6D] opacity-30">
-                </div>
-
-                <div class="w-full h-full overflow-hidden relative shadow-2xl">
-                    <img src="ar-perfil.jpeg" alt="Dra. Amanda Rodrigues"
-                        class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-[2s]">
+                <!-- Removidos efeitos de borda/máscara complexos que estavam "feios" -->
+                <div class="w-full h-full relative shadow-2xl rounded-2xl overflow-hidden">
+                    <!-- Usando a foto fornecida image_8f30fb.jpg -->
+                    <img src="/ar-perfil-hq.jpeg" alt="Dra. Amanda Rodrigues"
+                        class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-[2s]">
                     <div
                         class="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-[#7D2335] to-transparent opacity-60">
                     </div>
@@ -341,14 +358,19 @@
         </div>
     </section>
 
-    <!-- Sobre Section (Conteúdo Real Integrado) -->
+    <!-- Sobre Section -->
     <section id="sobre" class="py-32 bg-[#F7F4F2]">
         <div class="container-aether">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-                <div class="relative sticky top-32">
-                    <div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-[#7D2335]"></div>
-                    <img src="ar-second.jpeg" class="w-full h-[600px] object-cover object-center shadow-lg"
-                        alt="Amanda Rodrigues">
+
+                <!-- Imagem Sobre (SEM STICKY - Resolvendo bug mobile) -->
+                <div class="relative">
+                    <!-- Removido sticky top-32 e bordas deslocadas que podiam parecer "bugadas" -->
+                    <div class="w-full h-[600px] overflow-hidden rounded-2xl shadow-xl">
+                        <!-- Usando a mesma foto de alta qualidade fornecida -->
+                        <img src="/ar-second-hq.jpeg" class="w-full h-full object-cover object-center"
+                            alt="Consultório">
+                    </div>
                 </div>
 
                 <div class="space-y-10">
@@ -380,7 +402,7 @@
                             como psicóloga quanto meu fazer como analista.
                         </p>
 
-                        <h3 class="text-2xl font-serif text-[#7D2335] mt-12 mb-6">A Abordagem Analítica</h3>
+                        <h3 class="text-2xl font-serif text-[#7D2335] mt-12 mb-6">A Abordagem</h3>
                         <p>
                             A psicanálise entende que existe algo em nós, chamado <strong>inconsciente</strong>, que nos
                             constitui e do qual não temos acesso automático. Ele está na "ponta da língua" e em tudo que
@@ -400,7 +422,7 @@
         </div>
     </section>
 
-    <!-- Sobre o Serviço (Antigo Especialidades) -->
+    <!-- Sobre o Serviço -->
     <section id="servicos" class="py-32 bg-white">
         <div class="container-aether">
             <div class="text-center max-w-3xl mx-auto mb-20">
@@ -458,8 +480,8 @@
                     <div class="text-[#594A47] font-light leading-relaxed text-sm text-justify">
                         <p>O valor é informado diretamente via contato (Art. 20 do Código de Ética proíbe preço como
                             propaganda).</p>
-                        <p class="mt-2">Não trabalho com pacotes; os valores são fixos independente do tempo de
-                            tratamento.</p>
+                        <p class="mt-2">Não trabalho com pacotes; <strong>os valores são iguais</strong> independente do
+                            tempo de tratamento.</p>
                         <ul class="mt-4 text-left list-disc list-inside space-y-1 text-xs">
                             <li>Nota fiscal para reembolso (convênio)</li>
                             <li>Pagamento via PIX, dinheiro ou transferência</li>
@@ -471,7 +493,7 @@
         </div>
     </section>
 
-    <!-- CTA Final (CHAPADO, SEM TEXTURA) -->
+    <!-- CTA Final -->
     <section id="contato" class="py-32 bg-[#2A2A2A] text-white relative overflow-hidden">
         <div class="container-aether relative z-10 text-center">
             <span class="text-xs uppercase tracking-[0.4em] text-[#A67C6D] mb-4 block">Contato</span>
@@ -483,13 +505,27 @@
                 Iniciar Conversa
             </a>
 
-            <div
-                class="mt-20 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-sm uppercase tracking-widest text-gray-500">
-                <a href="mailto:amandarodriguesb8@gmail.com"
-                    class="hover:text-white transition-colors">amandarodriguesb8@gmail.com</a>
-                <a href="https://wa.me/5533999828549" class="hover:text-white transition-colors">(33) 99982-8549</a>
-                <a href="https://instagram.com/psi_amanda8" target="_blank"
-                    class="hover:text-white transition-colors">@psi_amanda8</a>
+            <!-- Informações de Localização e Contato -->
+            <div class="mt-16 max-w-4xl mx-auto border-t border-gray-800 pt-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-12">
+                    <div>
+                        <h4 class="text-[#A67C6D] text-sm uppercase tracking-widest mb-4">Atendimento Presencial</h4>
+                        <p class="text-gray-400 font-light text-lg">Bairro Agenor de Campos<br>Mongaguá - SP</p>
+                    </div>
+                    <div>
+                        <h4 class="text-[#A67C6D] text-sm uppercase tracking-widest mb-4">Atendimento Online</h4>
+                        <p class="text-gray-400 font-light text-lg">Para todo o Brasil<br>via vídeo chamada</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-sm uppercase tracking-widest text-gray-500">
+                    <a href="mailto:amandarodriguesb8@gmail.com"
+                        class="hover:text-white transition-colors">amandarodriguesb8@gmail.com</a>
+                    <a href="https://wa.me/5533999828549" class="hover:text-white transition-colors">(33) 99982-8549</a>
+                    <a href="https://instagram.com/psi_amanda8" target="_blank"
+                        class="hover:text-white transition-colors">@psi_amanda8</a>
+                </div>
             </div>
         </div>
     </section>
