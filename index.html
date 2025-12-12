@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -19,6 +19,9 @@
     <!-- Ícones -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Lenis Smooth Scroll (A Magia da Física) -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
     <style>
         /* * AETHER ULTIMATE SYSTEM 
          * Filosofia: Contraste Máximo & Visibilidade Absoluta
@@ -35,6 +38,47 @@
             /* Quase Preto */
             --text-light: #EFEBE9;
             /* Off-white para texto sobre Marsala */
+        }
+
+        html.lenis,
+        html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        /* SCROLLBAR PREMIUM (Adeus barra feia) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--brand-secondary);
+            border-radius: 4px;
+            border: 2px solid var(--bg-light);
+            /* Cria um respiro ao redor */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--brand-primary);
         }
 
         body {
@@ -109,8 +153,6 @@
             z-index: 100;
             width: 64px;
             height: 64px;
-            background-color: #25D366;
-            /* Verde Oficial ou Marsala? Mantendo Marsala para Luxo */
             background-color: var(--brand-primary);
             color: white;
             border-radius: 50%;
@@ -168,6 +210,7 @@
             letter-spacing: 0.2em;
             font-size: 0.75rem;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         .nav-link-hero:hover {
@@ -197,9 +240,9 @@
             <a href="#" class="text-3xl font-serif text-white tracking-widest">A.R.</a>
 
             <div class="hidden md:flex space-x-12">
-                <a href="#sobre" class="nav-link-hero">Sobre</a>
-                <a href="#servicos" class="nav-link-hero">Serviços</a>
-                <a href="#contato" class="nav-link-hero">Contato</a>
+                <a onclick="lenis.scrollTo('#sobre')" class="nav-link-hero">Sobre</a>
+                <a onclick="lenis.scrollTo('#servicos')" class="nav-link-hero">Serviços</a>
+                <a onclick="lenis.scrollTo('#contato')" class="nav-link-hero">Contato</a>
             </div>
 
             <!-- Mobile Toggle -->
@@ -215,9 +258,9 @@
         <button onclick="toggleMenu()" class="absolute top-8 right-8">
             <i data-lucide="x" class="w-10 h-10"></i>
         </button>
-        <a href="#sobre" onclick="toggleMenu()" class="text-4xl font-serif">Sobre</a>
-        <a href="#servicos" onclick="toggleMenu()" class="text-4xl font-serif">Serviços</a>
-        <a href="#contato" onclick="toggleMenu()" class="text-4xl font-serif">Contato</a>
+        <a onclick="toggleMenu(); lenis.scrollTo('#sobre')" class="text-4xl font-serif cursor-pointer">Sobre</a>
+        <a onclick="toggleMenu(); lenis.scrollTo('#servicos')" class="text-4xl font-serif cursor-pointer">Serviços</a>
+        <a onclick="toggleMenu(); lenis.scrollTo('#contato')" class="text-4xl font-serif cursor-pointer">Contato</a>
     </div>
 
     <!-- HERO SECTION: IMPACTO VISUAL -->
@@ -245,7 +288,7 @@
                 </p>
 
                 <div class="pt-4">
-                    <a href="#contato" class="btn-gold">
+                    <a onclick="lenis.scrollTo('#contato')" class="btn-gold cursor-pointer">
                         Agendar Sessão
                     </a>
                 </div>
@@ -367,7 +410,7 @@
                 Comece sua jornada<br>hoje mesmo.
             </h2>
 
-            <a href="https://wa.me/5511999999999" class="btn-gold border-none hover:bg-gray-200">
+            <a href="https://wa.me/5511999999999" class="btn-gold border-none hover:bg-gray-200 cursor-pointer">
                 Iniciar Conversa
             </a>
 
@@ -392,14 +435,33 @@
     </a>
 
     <!-- Back to Top (Direita) -->
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="back-to-top" id="backToTop">
+    <button onclick="lenis.scrollTo(0)" class="back-to-top" id="backToTop">
         <i data-lucide="arrow-up" class="w-6 h-6"></i>
     </button>
 
     <script>
         lucide.createIcons();
 
-        // Menu Mobile
+        // 1. INICIALIZAÇÃO LENIS (SMOOTH SCROLL)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Curva exponencial suave
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // 2. Menu Mobile
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             const isOpen = !menu.classList.contains('translate-y-full');
@@ -410,7 +472,7 @@
             }
         }
 
-        // Back to Top
+        // 3. Back to Top Visibility
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 600) {
