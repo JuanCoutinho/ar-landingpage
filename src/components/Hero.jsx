@@ -74,9 +74,9 @@ const Hero = () => {
                     className="order-1 lg:order-2 relative h-[50vh] lg:h-[80vh] w-full"
                 >
                     <div className="w-full h-full relative shadow-2xl rounded-2xl overflow-hidden">
-                        {/* Using uploaded_image_0 as hero image */}
+                        {/* Using new uploaded hero image */}
                         <img
-                            src="/assets/uploaded_image_0_1766062522856.png"
+                            src="/assets/ar-perfil.jpg"
                             alt="Dra. Amanda Rodrigues"
                             className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-[2s]"
                         />

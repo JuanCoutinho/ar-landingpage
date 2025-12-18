@@ -14,9 +14,9 @@ const About = () => {
                         className="relative"
                     >
                         <div className="w-full h-96 lg:h-[600px] overflow-hidden rounded-2xl shadow-xl">
-                            {/* Using uploaded_image_4 as secondary image */}
+                            {/* Using new uploaded about image */}
                             <img
-                                src="/assets/uploaded_image_4_1766062522856.png"
+                                src="/assets/ar-second.jpg"
                                 className="w-full h-full object-cover object-center"
                                 alt="Consultório"
                             />
