@@ -42,6 +42,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <FloatingButtons />
     </div>
   );
 }
