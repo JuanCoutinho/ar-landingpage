@@ -43,11 +43,11 @@ const Services = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl text-[#7D2335] mb-6 font-serif"
+                        className="text-5xl text-brand-red mb-6 font-serif"
                     >
                         Sobre o serviço
                     </motion.h2>
-                    <div className="w-20 h-1 bg-[#A67C6D] mx-auto"></div>
+                    <div className="w-20 h-1 bg-brand-gold mx-auto"></div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
@@ -58,9 +58,9 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="bg-white border border-[#E5E5E5] p-10 text-center group hover:border-[#A67C6D] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col"
+                            className="bg-white border border-gray-200 p-10 text-center group hover:border-brand-gold hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col"
                         >
-                            <div className="w-16 h-16 bg-[#F7F4F2] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#7D2335] group-hover:text-white text-[#7D2335] transition-colors duration-300">
+                            <div className="w-16 h-16 bg-brand-beige/30 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-brand-red group-hover:text-white text-brand-red transition-colors duration-300">
                                 {service.icon}
                             </div>
                             <h3 className="text-2xl font-serif text-[#2A2A2A] mb-4">{service.title}</h3>

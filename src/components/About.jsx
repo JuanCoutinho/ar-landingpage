@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <section id="sobre" className="py-32 bg-[#F7F4F2]">
+        <section id="sobre" className="py-32 bg-brand-white">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
@@ -30,9 +30,9 @@ const About = () => {
                         transition={{ duration: 0.8 }}
                         className="space-y-10"
                     >
-                        <span className="text-xs font-bold tracking-[0.3em] text-[#A67C6D] uppercase">Sobre Mim</span>
+                        <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase">Sobre Mim</span>
 
-                        <h2 className="text-4xl md:text-5xl text-[#7D2335] leading-tight font-serif">
+                        <h2 className="text-4xl md:text-5xl text-brand-red leading-tight font-serif">
                             Psicóloga Clínica e Psicanalista de orientação Lacaniana.
                         </h2>
 
@@ -45,7 +45,7 @@ const About = () => {
                                 são fundamentados na psicanálise de orientação Lacaniana.
                             </p>
 
-                            <div className="pl-6 border-l-2 border-[#A67C6D] py-2 italic text-[#7D2335]">
+                            <div className="pl-6 border-l-2 border-brand-gold py-2 italic text-brand-red">
                                 "Acredito que a formação de todo analista é constante e se faz sustentando o tripé
                                 psicanalítico colocado desde Sigmund Freud: supervisão, análise pessoal e estudo constante
                                 da teoria."
@@ -58,7 +58,7 @@ const About = () => {
                                 como psicóloga quanto meu fazer como analista.
                             </p>
 
-                            <h3 className="text-2xl font-serif text-[#7D2335] mt-8 mb-4">A Abordagem</h3>
+                            <h3 className="text-2xl font-serif text-brand-red mt-8 mb-4">A Abordagem</h3>
                             <p>
                                 A psicanálise entende que existe algo em nós, chamado <strong>inconsciente</strong>, que nos
                                 constitui e do qual não temos acesso automático. Ele está na "ponta da língua" e em tudo que

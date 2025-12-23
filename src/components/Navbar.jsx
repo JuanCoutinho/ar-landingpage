@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,12 +31,12 @@ const Navbar = () => {
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#7D2335]/90 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'
+                className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-red/90 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'
                     }`}
             >
                 <div className="container mx-auto px-6 flex items-center justify-between">
-                    <a href="#" className="text-2xl font-serif text-white tracking-widest font-bold">
-                        A.R.
+                    <a href="#" className="flex items-center">
+                        <img src={logo} alt="Amanda Rodrigues" className="h-16 w-auto" />
                     </a>
 
                     {/* Desktop Menu */}
@@ -66,13 +67,13 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: '-100%' }}
                         transition={{ duration: 0.5, ease: 'easeInOut' }}
-                        className="fixed inset-0 bg-[#7D2335] z-40 flex flex-col justify-center items-center gap-8"
+                        className="fixed inset-0 bg-brand-red z-40 flex flex-col justify-center items-center gap-8"
                     >
                         {['Sobre', 'Serviços', 'Contato'].map((item) => (
                             <button
                                 key={item}
                                 onClick={() => scrollToSection(item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))}
-                                className="text-white text-4xl font-serif hover:text-[#E0C0B0] transition-colors"
+                                className="text-white text-4xl font-serif hover:text-brand-beige transition-colors"
                             >
                                 {item}
                             </button>

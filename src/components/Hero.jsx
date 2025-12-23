@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center bg-[#7D2335] text-[#EFEBE9] overflow-hidden">
+        <section className="relative min-h-screen flex items-center bg-brand-red text-brand-white overflow-hidden">
             <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-20">
 
                 {/* Text Content */}
@@ -12,13 +12,13 @@ const Hero = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="z-10 order-2 lg:order-1 space-y-8"
                 >
-                    <div className="border-l-2 border-[#A67C6D] pl-6">
-                        <span className="text-sm uppercase tracking-[0.4em] text-[#A67C6D]">Psicologia Clínica</span>
+                    <div className="border-l-2 border-brand-gold pl-6">
+                        <span className="text-sm uppercase tracking-[0.4em] text-brand-gold">Psicologia Clínica</span>
                     </div>
 
                     <h1 className="font-serif text-6xl md:text-8xl lg:text-[6rem] leading-none text-white">
                         Amanda<br />
-                        <span className="text-[#E0C0B0] italic">Rodrigues</span>
+                        <span className="text-brand-beige italic">Rodrigues</span>
                     </h1>
 
                     <div className="text-xl md:text-2xl text-gray-200 font-serif italic leading-relaxed max-w-lg space-y-2 opacity-90">
@@ -59,7 +59,7 @@ const Hero = () => {
                                 e.preventDefault();
                                 document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
                             }}
-                            className="inline-block bg-[#F7F4F2] text-[#7D2335] px-12 py-4 uppercase tracking-[0.25em] text-sm font-bold hover:bg-white hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+                            className="inline-block bg-brand-white text-brand-red px-12 py-4 uppercase tracking-[0.25em] text-sm font-bold hover:bg-brand-beige hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
                         >
                             Agendar Sessão
                         </a>
@@ -80,7 +80,7 @@ const Hero = () => {
                             alt="Dra. Amanda Rodrigues"
                             className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-[2s]"
                         />
-                        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#7D2335] to-transparent opacity-60"></div>
+                        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-brand-red to-transparent opacity-60"></div>
                     </div>
                 </motion.div>
             </div>
