@@ -6,6 +6,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import FloatingButtons from './components/FloatingButtons';
 
 function App() {
   useEffect(() => {
