@@ -73,13 +73,14 @@ const Hero = () => {
                     transition={{ duration: 1, delay: 0.2 }}
                     className="order-1 lg:order-2 relative h-[50vh] lg:h-[80vh] w-full"
                 >
-                    <div className="w-full h-full relative rounded-2xl overflow-hidden flex items-end justify-center">
-                        {/* Using new uploaded hero image with removed background */}
+                    <div className="w-full h-full relative shadow-2xl rounded-2xl overflow-hidden">
+                        {/* Using new uploaded hero image */}
                         <img
-                            src="/assets/ar-perfil-nobg.png"
+                            src="/assets/ar-perfil.jpg"
                             alt="Dra. Amanda Rodrigues"
-                            className="w-full h-full object-contain object-bottom hover:scale-105 transition-transform duration-[2s]"
+                            className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-[2s]"
                         />
+                        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-brand-red to-transparent opacity-60"></div>
                     </div>
                 </motion.div>
             </div>
