@@ -36,7 +36,7 @@ const Navbar = () => {
             >
                 <div className="container mx-auto px-6 flex items-center justify-between">
                     <a href="#" className="flex items-center">
-                        <img src={logo} alt="Amanda Rodrigues" className="h-32 md:h-48 w-auto transition-all duration-300" />
+                        <img src={logo} alt="Amanda Rodrigues" className="h-12 md:h-14 w-auto rounded-full transition-all duration-300" />
                     </a>
 
                     {/* Desktop Menu */}
