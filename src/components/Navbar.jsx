@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoNav from '../assets/logo-nav.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,7 @@ const Navbar = () => {
             >
                 <div className="container mx-auto px-6 flex items-center justify-between">
                     <a href="#" className="flex items-center">
-                        {/* Logo removido - fundo branco */}
+                        <img src={logoNav} alt="Amanda Rodrigues" className="h-10 md:h-12 w-auto transition-all duration-300" />
                     </a>
 
                     {/* Desktop Menu */}
