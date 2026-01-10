@@ -60,15 +60,25 @@ const About = () => {
 
                             <h3 className="text-2xl font-serif text-brand-red mt-8 mb-4">A Abordagem</h3>
                             <p>
-                                A psicanálise entende que existe algo em nós, chamado <strong>inconsciente</strong>, que nos
-                                constitui e do qual não temos acesso automático. Ele está na "ponta da língua" e em tudo que
-                                constrói nossa subjetividade, principalmente nas repetições que, às vezes, mesmo danosas,
-                                não conseguimos mudar.
+                                A psicanálise acredita que existe algo em nós, chamado <strong>inconsciente</strong>, que nos
+                                constitui e do qual não temos acesso de forma automática, porém mesmo não nos dando conta de
+                                sua existência, ele está na "ponta da língua" e em tudo que constrói a nossa subjetividade,
+                                principalmente nas repetições que apesar de, às vezes, danosas e nos darmos conta, não
+                                conseguimos mudar.
                             </p>
                             <p>
-                                Entendo a análise não como uma solução mágica para todo sofrimento, mas como um modo de
-                                estar mais avisado do nosso inconsciente. A partir disso, conseguimos fazer arranjos mais
-                                interessantes e prazerosos com a vida.
+                                Entendo a análise não como uma panaceia que irá nos curar de todo e qualquer sofrimento da
+                                vida, mas como um modo de estar mais avisados do nosso inconsciente e a partir disso
+                                conseguir fazer arranjos mais interessantes e prazerosos com a vida, além de construir outras
+                                formas de estar no mundo.
+                            </p>
+                            <p>
+                                Freud diz que a análise não promete uma cura total, mas sim transformar a miséria neurótica
+                                em sofrimento comum. Pois do sofrimento nenhum ser humano é isento, mas os sofrimentos não
+                                precisam ser adoecedores e paralisantes.
+                            </p>
+                            <p className="mt-6 font-medium text-brand-red">
+                                Se você deseja iniciar essa jornada, entre em contato comigo.
                             </p>
                         </div>
                     </motion.div>
