@@ -38,7 +38,7 @@ const About = () => {
 
                         <div className="text-lg font-light leading-loose text-justify text-[#594A47] space-y-6">
                             <p>
-                                Olá, sou psicóloga formada pela Universidade Federal de São João Del-Rei (UFSJ), com
+                                Olá, sou psicóloga (CRP-06/ 226847) formada pela Universidade Federal de São João Del-Rei (UFSJ), com
                                 pós-graduação em clínica com pessoas autistas e formação em psicanálise pelo Instituto
                                 Bergasse (IB). Para além da minha formação acadêmica, meu percurso clínico se desenvolveu a
                                 partir da <strong>teoria psicanalítica</strong>. Sendo assim, minha escuta e todo o processo
